@@ -2,6 +2,8 @@
 
     font-family: 'Oswald', sans-serif;*/
 
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap'); */
+
 :root {
   --style-mont: "Montserrat", sans-serif;
   --style-oswald: "Oswald", sans-serif;
@@ -25,6 +27,7 @@
 
 body {
   font-family: var(--style-mont);
+  position: relative;
 }
 
 img {
@@ -45,13 +48,6 @@ h3 {
 
   margin: 0 auto;
 }
-
-/* .col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-} */
 
 /*--TYPOGRAPHY--*/
 
@@ -111,6 +107,11 @@ h3 {
   -o-transform: scale(1.1);
 }
 
+.btn:focus {
+  outline: none;
+  transform: scale(1);
+}
+
 .hero-box,
 .part__2,
 .part__3,
@@ -125,7 +126,9 @@ header {
   text-transform: uppercase;
   font-size: 1.125em;
   height: auto;
-  /* padding: 1em 0; */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 /*-------Header-top*/
@@ -140,6 +143,7 @@ header {
   align-items: center;
   width: 100%;
 }
+
 .burger-wrapper {
   padding: 0.9em 0.5em;
   border: 1px solid var(--clr-gold);
@@ -153,6 +157,8 @@ header {
 .logo {
   width: 5rem;
   height: 5rem;
+  padding: 0.25em 0;
+  border-radius: 50%;
 }
 .burger {
   display: block;
@@ -208,6 +214,10 @@ header {
   -o-transform: translateY(0.5rem);
 }
 
+.burger:focus {
+  outline: none;
+}
+
 .nav-open .burger {
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
@@ -241,8 +251,7 @@ header {
   visibility: hidden;
   opacity: 0;
   height: 0;
-  width: 0;
-  /* position: absolute; */
+  width: 100%;
   transition: all 0.5s;
   transform: translateX(100%);
   -webkit-transform: translateX(100%);
@@ -278,6 +287,11 @@ header {
 }
 .nav__link:hover {
   border-bottom: 2px solid var(--clr-gold);
+  opacity: 0.7;
+}
+
+.nav__link:active {
+  opacity: 0.7;
 }
 
 .nav__btn {
@@ -368,6 +382,13 @@ header {
   margin-bottom: 1.5em;
 }
 
+.schetch {
+  border-radius: 10px;
+  width: 80%;
+  height: auto;
+  margin: 1em auto;
+}
+
 .side__text {
   background: var(--clr-medium-grey);
   color: var(--clr-white);
@@ -419,7 +440,7 @@ header {
 .footer__link {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   transition: all 0.2s;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -433,7 +454,7 @@ header {
 
 .footer__link:hover {
   opacity: 0.8;
-  border-bottom: 1px solid var(--clr-gold);
+  border-bottom: 2px solid var(--clr-gold);
 }
 
 @media (min-width: 700px) {
